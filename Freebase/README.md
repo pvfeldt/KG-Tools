@@ -55,7 +55,7 @@ Functions:
 Path to Freebase query:
 
 ```
-./KG-Tools/freebase_query/sparql_execution.py
+./KG-Tools/freebase/query/sparql_execution.py
 ```
 
 Functions:
@@ -70,7 +70,7 @@ Functions:
 Path to Freebase query:
 
 ```
-./KG-Tools/freebase_query/sparql_execution.py
+./KG-Tools/freebase/query/sparql_execution.py
 ```
 
 Functions:
