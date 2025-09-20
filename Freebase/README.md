@@ -26,7 +26,7 @@ The method of querying local Freebase can be found in sparql_execution.py. The d
 Path to Freebase query:
 
 ```
-./KG-Tools/freebase/query/sparql_execution.py
+./KG-Tools/Freebase/query/sparql_execution.py
 ```
 
 Functions:
@@ -40,7 +40,7 @@ Functions:
 Path to Freebase query:
 
 ```
-./KG-Tools/freebase/query/sparql_execution.py
+./KG-Tools/Freebase/query/sparql_execution.py
 ```
 
 Functions:
@@ -55,7 +55,7 @@ Functions:
 Path to Freebase query:
 
 ```
-./KG-Tools/freebase/query/sparql_execution.py
+./KG-Tools/Freebase/query/sparql_execution.py
 ```
 
 Functions:
@@ -70,7 +70,7 @@ Functions:
 Path to Freebase query:
 
 ```
-./KG-Tools/freebase/query/sparql_execution.py
+./KG-Tools/Freebase/query/sparql_execution.py
 ```
 
 Functions:
@@ -79,7 +79,7 @@ Functions:
 | ------------------------------ | ------------------------------------------------------------ |
 | execute_query_with_odbc(query) | Input: query->str<br>Output: entities->list<br>**Execute the SPARQL query to obtain the result entities.** |
 
-## 2 Other Related
+## 2 Others
 
 ### 2.1 FACC1 Annotation
 
