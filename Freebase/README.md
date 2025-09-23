@@ -23,7 +23,7 @@ The method of querying local Freebase can be found in `sparql_execution.py`. The
 
 ### 1.1 Retrieval for Entity Label
 
-Path to Freebase query: `./KG-Tools/Freebase/query/sparql_execution.py`.
+Path to Freebase query: `KG-Tools/Freebase/query/sparql_execution.py`.
 
 Functions:
 
@@ -33,7 +33,7 @@ Functions:
 
 ### 1.2 Retrieval for Single-Hop Neighboring Relations
 
-Path to Freebase query: `./KG-Tools/Freebase/query/sparql_execution.py`.
+Path to Freebase query: `KG-Tools/Freebase/query/sparql_execution.py`.
 
 Functions:
 
@@ -44,7 +44,7 @@ Functions:
 
 ### 1.3 Retrieval for Single-Hop Neighboring Entities
 
-Path to Freebase query:`./KG-Tools/Freebase/query/sparql_execution.py`.
+Path to Freebase query:`KG-Tools/Freebase/query/sparql_execution.py`.
 
 Functions:
 
@@ -55,7 +55,7 @@ Functions:
 
 ### 1.4 Complex Query
 
-Path to Freebase query: `./KG-Tools/Freebase/query/sparql_execution.py`.
+Path to Freebase query: `KG-Tools/Freebase/query/sparql_execution.py`.
 
 Functions:
 
@@ -67,7 +67,7 @@ Functions:
 
 ### 2.1 FACC1 Annotation
 
-Path to entity retrieval: `./KG-Tools/Freebase/entity_retrieval`.
+Path to entity retrieval: `KG-Tools/Freebase/entity_retrieval`.
 
 FACC1 annotation serves the function of mapping ambiguous entities to existing entities in Freebase, which can be downloaded [here](https://github.com/HXX97/GMT-KBQA/tree/main/data/common_data/facc1). 
 
@@ -106,4 +106,4 @@ An example is provided below.
 - The Freebase setup follows the [Freebase-Setup repository](https://github.com/dki-lab/Freebase-Setup).
 - The `sparql_execution.py` script is adapted from the [ChatKBQA repository](https://github.com/LHRLAB/ChatKBQA/blob/main/executor/sparql_executor.py). The functions have been extended to include neighboring entity retrieval. Additionally, the entity linking based on FACC1 annotations is directly sourced from this work.
 - The `ontology` folder is cloned from the [GrailQA repository](https://github.com/dki-lab/GrailQA/tree/main/ontology).
-- The download of FACC1 annotation is from the [GMT-KBQA repository](https://github.com/HXX97/GMT-KBQA/tree/main/data/common_data/facc1).
+- The download of FACC1 annotation is from the [GMT-KBQA repository]([GMT-KBQA/data/common_data/facc1 at main · HXX97/GMT-KBQA · GitHub](https://github.com/HXX97/GMT-KBQA/tree/main/data/common_data/facc1).
