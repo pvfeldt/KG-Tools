@@ -106,4 +106,4 @@ An example is provided below.
 - The Freebase setup follows the [Freebase-Setup repository](https://github.com/dki-lab/Freebase-Setup).
 - The `sparql_execution.py` script is adapted from the [ChatKBQA repository](https://github.com/LHRLAB/ChatKBQA/blob/main/executor/sparql_executor.py). The functions have been extended to include neighboring entity retrieval. Additionally, the entity linking based on FACC1 annotations is directly sourced from this work.
 - The `ontology` folder is cloned from the [GrailQA repository](https://github.com/dki-lab/GrailQA/tree/main/ontology).
-- The download of FACC1 annotation is from the [GMT-KBQA repository]([GMT-KBQA/data/common_data/facc1 at main · HXX97/GMT-KBQA · GitHub](https://github.com/HXX97/GMT-KBQA/tree/main/data/common_data/facc1).
+- The download of FACC1 annotation is from the [GMT-KBQA repository](https://github.com/HXX97/GMT-KBQA/tree/main/data/common_data/facc1).
