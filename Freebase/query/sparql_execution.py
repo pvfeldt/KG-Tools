@@ -10,8 +10,10 @@ import json
 import urllib
 from pathlib import Path
 from tqdm import tqdm
-from utils.config import FREEBASE_SPARQL_WRAPPER_URL, FREEBASE_ODBC_PORT
 
+ELQ_SERVICE_URL = "http://localhost:5688/entity_linking"
+FREEBASE_SPARQL_WRAPPER_URL = "http://localhost:8890/sparql"
+FREEBASE_ODBC_PORT = "13001"
 sparql = SPARQLWrapper(FREEBASE_SPARQL_WRAPPER_URL)
 sparql.setReturnFormat(JSON)
 
