@@ -35,7 +35,8 @@ Below is a list of some of the most frequently used datasets for knowledge graph
 | [GraphQuestions](https://github.com/ysu1989/GraphQuestions)  | [Freebase](https://github.com/pvfeldt/KG-Tools/tree/main/Freebase) |
 | [KQA Pro](https://github.com/shijx12/KQAPro_Baselines)       | Wikidata                                                     |
 | [QALD-10](https://github.com/KGQA/QALD-10)                   | Wikidata                                                     |
-| [LC-QuAD](https://github.com/AskNowQA/LC-QuAD)               | DBpedia                                                      |
+| [LC-QuAD 2.0](https://github.com/AskNowQA/LC-QuAD2.0)        | Wikidata                                                     |
+| [LC-QuAD 1.0](https://github.com/AskNowQA/LC-QuAD), [LC-QuAD 2.0](https://github.com/AskNowQA/LC-QuAD2.0) | DBpedia                                                      |
 | [QALD](https://github.com/ag-sc/QALD)                        | DBpedia                                                      |
 
 Please refer to the [KGQA leaderboard](https://kgqa.github.io/leaderboard/) for more information.
