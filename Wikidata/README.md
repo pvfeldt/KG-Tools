@@ -33,6 +33,14 @@ Wikidata includes some of the knowledge graphs from Freebase. The entity mapping
 | --------------------------- | ------------------------------------------------------------ |
 | Freebase to Wikidata (fb2w) | [Download Link](https://developers.google.com/freebase?hl=zh-cn#freebase-wikidata-mappings) |
 
+### 0.5 Local Implementation of Wikipedia API
+
+Wikipedia API enables the search of a free-form text corpus related to entities within Wikipedia using keywords. It is integrated into the `Wikipedia-API` package, which can be installed using the instructions below. Utility functions are provided in the `KG-Tools/Wikipedia/query` folder.
+
+```
+pip3 install wikipedia-api
+```
+
 ## 1 Query
 
 The method for querying Wikidata can be found in `sparql_execution.py` and `sparql_query_combined.py`. The descriptions below pertain to some of the most commonly used functions.
@@ -90,8 +98,15 @@ Path to Wikidata query: `KG-Tools/Wikidata/query/sparql_execution.py` and `KG-To
 | map_freebase_to_wikidata(MID) | Input: MID->str<br>Output: QID->dict {"Qxxx":"xxx"}<br>**Map Freebase MID to Wikidata QID.** |
 | map_wikidata_to_freebase(QID) | Input: QID->str<br/>Output: MID->str "m.xxx"<br/>**Map Wikidata QID to Freebase MID.** |
 
+### 1.6 Search for Entity-Related Free-Form Text Corpus
+
+Path to Wikidata query: `KG-Tools/Wikidata/query/text_search.py`.
+
+| Function                     | Description                                                  |
+| ---------------------------- | ------------------------------------------------------------ |
+| search_in_wikipedia(keyword) | Input: keyword->str<br>Output: Text->dict {"summary":"xxx","other sections":"xxx"}<br>**Search for corpus in Wikipedia according to given keyword (entity).** |
+
 ## References
 
 - The official online query API is accessible via the [Wikidata Query Service](https://query.wikidata.org/sparql). 
 - Another stable endpoint is  [Wikidata endpoint](https://skynet.coypu.org/wikidata/), provided by [QALD-10](https://github.com/KGQA/QALD-10).
-
