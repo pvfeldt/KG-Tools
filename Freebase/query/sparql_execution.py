@@ -139,10 +139,10 @@ def get_in_relations_with_odbc(entity: str) -> str:
             """
               '?x1 ?x0 ' + ':' + entity + '. '
                                           """
-     FILTER regex(?x0, "http://rdf.freebase.com/ns/")
-     }
-     }
-     """)
+    FILTER regex(?x0, "http://rdf.freebase.com/ns/")
+    }
+    }
+    """)
     # print(query1)
 
     try:
