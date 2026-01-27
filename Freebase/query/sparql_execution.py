@@ -156,6 +156,7 @@ def get_in_relations_with_odbc(entity: str) -> str:
 
     for row in rows:
         in_relations.add(row[0].replace('http://rdf.freebase.com/ns/', ''))
+    in_relations=list(in_relations)
 
     return in_relations
 
@@ -194,6 +195,7 @@ def get_out_relations_with_odbc(entity: str) -> str:
 
     for row in rows:
         out_relations.add(row[0].replace('http://rdf.freebase.com/ns/', ''))
+    out_relations=list(out_relations)
 
     return out_relations
     
