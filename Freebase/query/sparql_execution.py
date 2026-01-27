@@ -32,7 +32,7 @@ odbc_conn = None
 def initialize_odbc_connection():
     global odbc_conn
     odbc_conn = pyodbc.connect(
-        f'DRIVER={path}/../lib/virtodbc.so;Host=localhost:{FREEBASE_ODBC_PORT};UID=dba;PWD=dba'
+        f'DRIVER={path}/lib/virtodbc.so;Host=localhost:{FREEBASE_ODBC_PORT};UID=dba;PWD=dba'
     )
     odbc_conn.setdecoding(pyodbc.SQL_CHAR, encoding='utf8')
     odbc_conn.setdecoding(pyodbc.SQL_WCHAR, encoding='utf8')
@@ -122,10 +122,15 @@ def get_types_with_odbc(entity: str) -> List[str]:
     else:
         return list(types)
 
-def get_in_relations_with_odbc(entity: str):
+def get_in_relations_with_odbc(entity: str) -> str:
+    # build connection
+    global odbc_conn
+    if odbc_conn == None:
+        initialize_odbc_connection()
+
     in_relations = set()
 
-    query1 = ("""
+    query1 = ("""SPARQL
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
             PREFIX : <http://rdf.freebase.com/ns/> 
@@ -140,22 +145,30 @@ def get_in_relations_with_odbc(entity: str):
      """)
     # print(query1)
 
-    sparql.setQuery(query1)
     try:
-        results = sparql.query().convert()
-    except urllib.error.URLError:
-        print(query1)
-        # exit(0)
-    for result in results['results']['bindings']:
-        in_relations.add(result['value']['value'].replace('http://rdf.freebase.com/ns/', ''))
+        with odbc_conn.cursor() as cursor:
+            cursor.execute(query1)
+            # rows = cursor.fetchall()
+            rows = cursor.fetchmany(10000)
+    except Exception:
+        # print(f"Query Execution Failed:{query1}")
+        exit(0)
+
+    for row in rows:
+        in_relations.add(row[0].replace('http://rdf.freebase.com/ns/', ''))
 
     return in_relations
 
 
-def get_out_relations_with_odbc(entity: str):
+def get_out_relations_with_odbc(entity: str) -> str:
+    # build connection
+    global odbc_conn
+    if odbc_conn == None:
+        initialize_odbc_connection()
+
     out_relations = set()
 
-    query2 = ("""
+    query2 = ("""SPARQL
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         PREFIX : <http://rdf.freebase.com/ns/> 
@@ -170,14 +183,17 @@ def get_out_relations_with_odbc(entity: str):
     """)
     # print(query2)
 
-    sparql.setQuery(query2)
     try:
-        results = sparql.query().convert()
-    except urllib.error.URLError:
-        print(query2)
-        # exit(0)
-    for result in results['results']['bindings']:
-        out_relations.add(result['value']['value'].replace('http://rdf.freebase.com/ns/', ''))
+        with odbc_conn.cursor() as cursor:
+            cursor.execute(query2)
+            # rows = cursor.fetchall()
+            rows = cursor.fetchmany(10000)
+    except Exception:
+        # print(f"Query Execution Failed:{query2}")
+        exit(0)
+
+    for row in rows:
+        out_relations.add(row[0].replace('http://rdf.freebase.com/ns/', ''))
 
     return out_relations
     
