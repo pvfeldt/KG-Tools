@@ -152,7 +152,7 @@ def get_in_relations_with_odbc(entity: str) -> str:
             rows = cursor.fetchmany(10000)
     except Exception:
         # print(f"Query Execution Failed:{query1}")
-        exit(0)
+        pass
 
     for row in rows:
         in_relations.add(row[0].replace('http://rdf.freebase.com/ns/', ''))
@@ -191,7 +191,7 @@ def get_out_relations_with_odbc(entity: str) -> str:
             rows = cursor.fetchmany(10000)
     except Exception:
         # print(f"Query Execution Failed:{query2}")
-        exit(0)
+        pass
 
     for row in rows:
         out_relations.add(row[0].replace('http://rdf.freebase.com/ns/', ''))
@@ -1141,7 +1141,6 @@ def get_in_entities_with_odbc(entity, relation):
     except Exception as e:
         # print(f"Query Execution Failed:{query1}")
         print(e)
-        exit(0)
 
     for row in rows:
         in_entities.add(row[0].replace('http://rdf.freebase.com/ns/', ''))
@@ -1187,7 +1186,6 @@ def get_out_entities_with_odbc(entity, relation):
     except Exception as e:
         # print(f"Query Execution Failed:{query1}")
         print(e)
-        exit(0)
 
     for row in rows:
         out_entities.add(row[0].replace('http://rdf.freebase.com/ns/', ''))
