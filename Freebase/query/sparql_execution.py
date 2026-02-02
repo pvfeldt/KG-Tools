@@ -144,7 +144,7 @@ def get_in_relations_with_odbc(entity: str) -> str:
     }
     """)
     # print(query1)
-
+    rows = {}
     try:
         with odbc_conn.cursor() as cursor:
             cursor.execute(query1)
@@ -183,7 +183,7 @@ def get_out_relations_with_odbc(entity: str) -> str:
     }
     """)
     # print(query2)
-
+    rows = {}
     try:
         with odbc_conn.cursor() as cursor:
             cursor.execute(query2)
@@ -1132,7 +1132,7 @@ def get_in_entities_with_odbc(entity, relation):
             }
       """)
     # print(query1)
-
+    rows = {}
     try:
         with odbc_conn.cursor() as cursor:
             cursor.execute(query1)
@@ -1177,7 +1177,7 @@ def get_out_entities_with_odbc(entity, relation):
                 FILTER regex(str(?x0), "^http://rdf.freebase.com/ns/")
             }""")
     # print(query1)
-
+    rows = {}
     try:
         with odbc_conn.cursor() as cursor:
             cursor.execute(query1)
